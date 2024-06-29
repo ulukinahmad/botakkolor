@@ -1,6 +1,4 @@
 #!/bin/bash
-sudo su
-cd
 git clone https://gitlab.com/ontranontran/kaspo
 cd kaspo
 chmod +x ngedie
